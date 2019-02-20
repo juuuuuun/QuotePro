@@ -17,6 +17,7 @@
 		C8AD598A221DE29300236FAE /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD5989221DE29300236FAE /* Photo.swift */; };
 		C8AD598C221DE2C700236FAE /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD598B221DE2C700236FAE /* QuoteView.swift */; };
 		C8AD598E221DE2D900236FAE /* QuoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8AD598D221DE2D900236FAE /* QuoteView.xib */; };
+		C8AD5990221DF04500236FAE /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD598F221DF04500236FAE /* QuoteTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C8AD5989221DE29300236FAE /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C8AD598B221DE2C700236FAE /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		C8AD598D221DE2D900236FAE /* QuoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteView.xib; sourceTree = "<group>"; };
+		C8AD598F221DF04500236FAE /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				C8AD596F221DE20700236FAE /* AppDelegate.swift */,
 				C8AD5981221DE24500236FAE /* HomeScreenViewController.swift */,
+				C8AD598F221DF04500236FAE /* QuoteTableViewCell.swift */,
 				C8AD5983221DE26900236FAE /* QuoteBuilderViewController.swift */,
 				C8AD598B221DE2C700236FAE /* QuoteView.swift */,
 				C8AD598D221DE2D900236FAE /* QuoteView.xib */,
@@ -155,6 +158,7 @@
 				C8AD598C221DE2C700236FAE /* QuoteView.swift in Sources */,
 				C8AD5970221DE20700236FAE /* AppDelegate.swift in Sources */,
 				C8AD5985221DE26900236FAE /* QuoteBuilderViewController.swift in Sources */,
+				C8AD5990221DF04500236FAE /* QuoteTableViewCell.swift in Sources */,
 				C8AD5982221DE24500236FAE /* HomeScreenViewController.swift in Sources */,
 				C8AD598A221DE29300236FAE /* Photo.swift in Sources */,
 			);
