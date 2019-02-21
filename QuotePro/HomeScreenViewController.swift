@@ -8,12 +8,13 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, QuoteBuilderViewControllerDelegateProtocol {
   
   
   // MARK: Properties
-  @IBOutlet weak var tableView: UITableView!
   
+  @IBOutlet weak var tableView: UITableView!
+  var quoteManager: QuoteManager!
   
   // MARK: ViewController Methods
   
@@ -23,12 +24,21 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     // Do any additional setup after loading the view.
     tableView.delegate = self
     tableView.dataSource = self
+    
+    quoteManager = QuoteManager()
+  }
+  
+  // MARK: QuoteBuilderViewControllerDelegateProtocol
+  
+  func receiveQuote(_ quote: Quote) {
+    quoteManager.addQuote(quote)
+    tableView.insertRows(at: [IndexPath(row: quoteManager.quotes.count-1, section: 0)], with: .fade)
   }
   
   // MARK: UITableView Data Source
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return quoteManager.quotes.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,20 +46,34 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
       fatalError("QuoteTableViewCell was not dequeued")
     }
     
-    
+    cell.quote = quoteManager.quotes[indexPath.row]
+    cell.configureCell()
     
     return cell
   }
   
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      // Delete the row from the data source
+      quoteManager.deleteQuote(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+  }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    present(UIActivityViewController(activityItems: quoteManager.quotes, applicationActivities: nil), animated: true)
+  }
+  
+  // MARK: Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "segueToQuoteBuilder" {
+      if let destinationViewController = segue.destination.children[0] as? QuoteBuilderViewController {
+        destinationViewController.quoteManager = quoteManager
+        destinationViewController.delegate = self
+      }
+    }
+  }
+  
   
 }

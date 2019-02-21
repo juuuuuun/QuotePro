@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuoteView: UIView {
+@IBDesignable class QuoteView: UIView {
 
   // MARK: Properties
   
@@ -18,19 +18,6 @@ class QuoteView: UIView {
   @IBOutlet weak var quoteLabel: UILabel!
   @IBOutlet weak var authorLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
-  
-  // MARK: Actions
-  
-  @IBAction func quoteTapped(_ sender: UITapGestureRecognizer) {
-    quoteLabel.text = "Best quote"
-    authorLabel.text = "ME"
-    authorLabel.isHidden = false
-    print("Quote Tapped")
-  }
-  @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
-    imageView.image = UIImage(named: "clicked")
-    print("Image Tapped")
-  }
   
   // MARK: Initializers
   

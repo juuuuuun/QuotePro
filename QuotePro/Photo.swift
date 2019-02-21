@@ -10,4 +10,13 @@ import UIKit
 
 class Photo {
 
+  // MARK: Properties
+  
+  var image: UIImage
+  
+  // MARK: Initializers
+  
+  init(image: UIImage) {
+    self.image = image
+  }
 }

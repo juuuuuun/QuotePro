@@ -25,24 +25,18 @@
                 <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="quT-PD-iBy">
                     <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                     <gestureRecognizers/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="STh-bO-Sei" appends="YES" id="nUo-ZF-2Ge"/>
-                    </connections>
                 </imageView>
                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No quote selected" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc3-bU-qGD">
-                    <rect key="frame" x="20" y="114" width="627" height="53"/>
+                    <rect key="frame" x="20" y="122.5" width="627" height="36"/>
                     <gestureRecognizers/>
-                    <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="wwl-J2-6al" appends="YES" id="utW-fG-0Fl"/>
-                    </connections>
                 </label>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4x-CZ-14p">
-                    <rect key="frame" x="271" y="187" width="125.5" height="26.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="288.5" y="178.5" width="90.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -64,16 +58,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
-        <tapGestureRecognizer id="STh-bO-Sei" userLabel="Image Tap Gesture Recognizer">
-            <connections>
-                <action selector="imageTapped:" destination="-1" id="OC1-uC-Fg6"/>
-            </connections>
-        </tapGestureRecognizer>
-        <tapGestureRecognizer id="wwl-J2-6al" userLabel="Quote Tap Gesture Recognizer">
-            <connections>
-                <action selector="quoteTapped:" destination="-1" id="XZm-Yk-6Fc"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="placeholder" width="1080" height="1080"/>

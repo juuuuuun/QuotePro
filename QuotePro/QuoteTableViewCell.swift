@@ -10,6 +10,22 @@ import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
   
+  // MARK: Properties
+  
+  var quote: Quote?
+  
+  @IBOutlet weak var quoteLabel: UILabel!
+  @IBOutlet weak var photoView: UIImageView!
+  
+  // MARK: QuoteTableViewCell Methods
+  
+  func configureCell() {
+    quoteLabel.text = quote?.quoteText
+    photoView.image = quote?.photo?.image
+  }
+  
+  // MARK: UITableViewCell Methods
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code

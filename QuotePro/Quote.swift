@@ -9,5 +9,18 @@
 import UIKit
 
 class Quote {
+  
+  // MARK: Properties
+  
+  var quoteText: String
+  var author: String
+  var photo: Photo?
+  
+  // MARK: Initializers
+  
+  init(quoteText: String, author: String) {
+    self.quoteText = quoteText
+    self.author = author
+  }
 
 }
