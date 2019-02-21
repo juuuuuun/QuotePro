@@ -15,12 +15,14 @@ class QuoteTableViewCell: UITableViewCell {
   var quote: Quote?
   
   @IBOutlet weak var quoteLabel: UILabel!
+  @IBOutlet weak var authorLabel: UILabel!
   @IBOutlet weak var photoView: UIImageView!
   
   // MARK: QuoteTableViewCell Methods
   
   func configureCell() {
     quoteLabel.text = quote?.quoteText
+    authorLabel.text = quote?.author
     photoView.image = quote?.photo?.image
   }
   

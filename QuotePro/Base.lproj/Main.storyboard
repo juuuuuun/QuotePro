@@ -78,8 +78,14 @@
                                                         <constraint firstAttribute="width" secondItem="0Dt-sh-TzY" secondAttribute="height" id="PG4-ww-QaR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGP-Ag-coa">
-                                                    <rect key="frame" x="107.5" y="39.5" width="244.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGP-Ag-coa">
+                                                    <rect key="frame" x="107.5" y="8" width="244.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hr-Mu-WZU">
+                                                    <rect key="frame" x="204" y="76.5" width="51.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -90,11 +96,14 @@
                                                 <constraint firstItem="QGP-Ag-coa" firstAttribute="leading" secondItem="0Dt-sh-TzY" secondAttribute="trailing" constant="8" id="2QG-n8-m2f"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QGP-Ag-coa" secondAttribute="trailing" constant="8" id="4Ks-gR-lrF"/>
                                                 <constraint firstItem="0Dt-sh-TzY" firstAttribute="height" secondItem="B2K-32-62I" secondAttribute="height" id="7Pk-CO-11J"/>
-                                                <constraint firstItem="QGP-Ag-coa" firstAttribute="centerY" secondItem="B2K-32-62I" secondAttribute="centerY" id="8dL-5d-RDG"/>
+                                                <constraint firstItem="4hr-Mu-WZU" firstAttribute="bottom" secondItem="B2K-32-62I" secondAttribute="bottomMargin" constant="8" id="Lo7-xR-15o"/>
+                                                <constraint firstItem="QGP-Ag-coa" firstAttribute="top" secondItem="B2K-32-62I" secondAttribute="top" constant="8" id="qBn-nD-R0I"/>
+                                                <constraint firstItem="4hr-Mu-WZU" firstAttribute="centerX" secondItem="QGP-Ag-coa" secondAttribute="centerX" id="xKP-nN-18B"/>
                                                 <constraint firstItem="0Dt-sh-TzY" firstAttribute="leading" secondItem="B2K-32-62I" secondAttribute="leading" id="zkc-gl-G2g"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="authorLabel" destination="4hr-Mu-WZU" id="nRj-hy-LMI"/>
                                             <outlet property="photoView" destination="0Dt-sh-TzY" id="Bqz-El-yBe"/>
                                             <outlet property="quoteLabel" destination="QGP-Ag-coa" id="BTT-ZY-E6M"/>
                                         </connections>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class QuoteView: UIView {
+class QuoteView: UIView {
 
   // MARK: Properties
   
@@ -36,5 +36,13 @@ import UIKit
     let bundle = Bundle(for: type(of: self))
     let nib = UINib(nibName: nibName, bundle: bundle)
     return nib.instantiate(withOwner: self, options: nil).first as? UIView
+  }
+  
+  // MARK: QuoteView Methods
+  
+  func setupWithQuote(_ quote: Quote) {
+    quoteLabel.text = quote.quoteText
+    authorLabel.text = quote.author
+    imageView.image = quote.photo?.image
   }
 }

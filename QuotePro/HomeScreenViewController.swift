@@ -61,7 +61,9 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    present(UIActivityViewController(activityItems: quoteManager.quotes, applicationActivities: nil), animated: true)
+    
+    
+    present(UIActivityViewController(activityItems: [], applicationActivities: nil), animated: true)
   }
   
   // MARK: Navigation
@@ -74,6 +76,5 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
       }
     }
   }
-  
   
 }
