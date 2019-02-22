@@ -27,7 +27,10 @@ class QuoteManager {
   
   func getRandomQuote() {
     ForismaticAPIRequest.getQuote { (quoteText: String, author: String) in
-      self.delegate?.receiveRandomQuote(Quote(quoteText: quoteText, author: author))
+      let quote = Quote()
+      quote.quoteText = quoteText
+      quote.author = author
+      self.delegate?.receiveRandomQuote(quote)
     }
   }
   

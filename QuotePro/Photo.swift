@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-import Realm
 import RealmSwift
 
 class Photo: Object {

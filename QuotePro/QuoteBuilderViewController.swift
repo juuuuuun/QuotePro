@@ -76,7 +76,8 @@ class QuoteBuilderViewController: UIViewController, QuoteManagerDelegateProtocol
         quote.photo = photo
         self.quoteView.setupWithQuote(quote)
       } else {
-        let quote = Quote(quoteText: "No quote selected", author: "")
+        let quote = Quote()
+        quote.quoteText = "No quote selected"
         quote.photo = photo
         self.quoteView.setupWithQuote(quote)
       }

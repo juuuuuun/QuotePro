@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Quote {
+class Quote: Object {
   
   // MARK: Properties
   
-  var quoteText: String
-  var author: String
-  var photo: Photo?
+  @objc dynamic var quoteText: String = ""
+  @objc dynamic var author: String = ""
+  @objc dynamic var photo: Photo?
   
   // MARK: Initializers
   
-  init(quoteText: String, author: String) {
-    self.quoteText = quoteText
-    self.author = author
-  }
+//  init(quoteText: String, author: String) {
+//    self.quoteText = quoteText
+//    self.author = author
+//  }
 
 }
