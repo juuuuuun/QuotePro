@@ -14,10 +14,4 @@ class Photo: Object {
   // MARK: Properties
   
   @objc dynamic var image: Data?
-  
-  // MARK: Initializers
-  
-//  init(image: UIImage) {
-//    self.image = image
-//  }
 }

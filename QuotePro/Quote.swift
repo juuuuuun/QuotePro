@@ -16,12 +16,4 @@ class Quote: Object {
   @objc dynamic var quoteText: String = ""
   @objc dynamic var author: String = ""
   @objc dynamic var photo: Photo?
-  
-  // MARK: Initializers
-  
-//  init(quoteText: String, author: String) {
-//    self.quoteText = quoteText
-//    self.author = author
-//  }
-
 }
