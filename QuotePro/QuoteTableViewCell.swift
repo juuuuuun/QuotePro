@@ -23,7 +23,9 @@ class QuoteTableViewCell: UITableViewCell {
   func configureCell() {
     quoteLabel.text = quote?.quoteText
     authorLabel.text = quote?.author
-    photoView.image = quote?.photo?.image
+    if let image = quote?.photo?.image {
+      photoView.image = UIImage(data: image)
+    }
   }
   
   // MARK: UITableViewCell Methods

@@ -8,15 +8,18 @@
 
 import UIKit
 
-class Photo {
+import Realm
+import RealmSwift
+
+class Photo: Object {
 
   // MARK: Properties
   
-  var image: UIImage
+  @objc dynamic var image: Data?
   
   // MARK: Initializers
   
-  init(image: UIImage) {
-    self.image = image
-  }
+//  init(image: UIImage) {
+//    self.image = image
+//  }
 }

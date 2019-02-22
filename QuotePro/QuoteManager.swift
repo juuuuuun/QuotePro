@@ -22,7 +22,7 @@ class QuoteManager {
   // MARK: QuoteManager Methods
   
   func addQuote(_ quote: Quote) {
-    quotes.append(quote)
+    quotes.insert(quote, at: 0)
   }
   
   func getRandomQuote() {

@@ -23,7 +23,9 @@ class PhotoManager {
   func getRandomPhoto(width: Int, height: Int) {
     let endpointForSize = "\(width)/\(height)/"
     LorempixelAPIRequest.getRandomPhoto(endpoint: endpointForSize) { (image: UIImage) in
-      self.delegate?.receiveRandomPhoto(Photo(image: image))
+      let photo = Photo()
+      photo.image = image.jpegData(compressionQuality: 1.0)
+      self.delegate?.receiveRandomPhoto(photo)
     }
   }
 }

@@ -32,7 +32,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
   
   func receiveQuote(_ quote: Quote) {
     quoteManager.addQuote(quote)
-    tableView.insertRows(at: [IndexPath(row: quoteManager.quotes.count-1, section: 0)], with: .fade)
+    tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
   }
   
   // MARK: UITableView Data Source

@@ -53,7 +53,9 @@ class QuoteView: UIView {
     quoteLabel.text = quote.quoteText
     authorLabel.text = quote.author
     if quote.photo != nil {
-      imageView.image = quote.photo?.image
+      if let image = quote.photo?.image {
+        imageView.image = UIImage(data: image)
+      }
     }
   }
 }
