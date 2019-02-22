@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol QuoteManagerDelegateProtocol: AnyObject {
   func receiveRandomQuote(_ quote: Quote)
@@ -22,7 +23,8 @@ class QuoteManager {
   // MARK: QuoteManager Methods
   
   func addQuote(_ quote: Quote) {
-    quotes.insert(quote, at: 0)
+    realmWrite(quote: quote)
+    quotes.append(quote)
   }
   
   func getRandomQuote() {
@@ -34,7 +36,38 @@ class QuoteManager {
     }
   }
   
+  func loadQuotes() {
+    let results = realmRead()
+    for quote in results {
+      quotes.append(quote)
+    }
+  }
+  
   func deleteQuote(at index: Int) {
+    let quote = quotes[index]
+    realmDelete(quote: quote)
     quotes.remove(at: index)
+  }
+  
+  // MARK: Realm Private Helper Methods
+  
+  private func realmWrite(quote: Quote) {
+    let realm = try! Realm()
+    try! realm.write {
+      realm.add(quote)
+    }
+  }
+  
+  private func realmRead() -> Results<Quote> {
+    let realm = try! Realm()
+    let results = realm.objects(Quote.self)
+    return results
+  }
+  
+  private func realmDelete(quote: Quote) {
+    let realm = try! Realm()
+    try! realm.write {
+      realm.delete(quote)
+    }
   }
 }
