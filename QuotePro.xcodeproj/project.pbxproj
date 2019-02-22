@@ -22,9 +22,12 @@
 		C8AD5994221E370E00236FAE /* QuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD5993221E370E00236FAE /* QuoteManager.swift */; };
 		C8AD5996221E475500236FAE /* LorempixelAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD5995221E475500236FAE /* LorempixelAPIRequest.swift */; };
 		C8AD5998221E493000236FAE /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD5997221E493000236FAE /* PhotoManager.swift */; };
+		FCBA5FB953604DDC0952A1DB /* Pods_QuotePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA70607BD0250454D470829C /* Pods_QuotePro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751FA045DB825B87B1D35CB8 /* Pods-QuotePro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuotePro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro.debug.xcconfig"; sourceTree = "<group>"; };
+		AA70607BD0250454D470829C /* Pods_QuotePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuotePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AD596C221DE20700236FAE /* QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AD596F221DE20700236FAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8AD5974221DE20700236FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		C8AD5993221E370E00236FAE /* QuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteManager.swift; sourceTree = "<group>"; };
 		C8AD5995221E475500236FAE /* LorempixelAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LorempixelAPIRequest.swift; sourceTree = "<group>"; };
 		C8AD5997221E493000236FAE /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		ED91DA712372243BCE0223B1 /* Pods-QuotePro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuotePro.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBA5FB953604DDC0952A1DB /* Pods_QuotePro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08C5976A32E25855CB5EF11E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA70607BD0250454D470829C /* Pods_QuotePro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C8AD5963221DE20700236FAE = {
 			isa = PBXGroup;
 			children = (
 				C8AD596E221DE20700236FAE /* QuotePro */,
 				C8AD596D221DE20700236FAE /* Products */,
+				E49AA79807245CACA54536CA /* Pods */,
+				08C5976A32E25855CB5EF11E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +109,15 @@
 			path = QuotePro;
 			sourceTree = "<group>";
 		};
+		E49AA79807245CACA54536CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				751FA045DB825B87B1D35CB8 /* Pods-QuotePro.debug.xcconfig */,
+				ED91DA712372243BCE0223B1 /* Pods-QuotePro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8AD597E221DE20800236FAE /* Build configuration list for PBXNativeTarget "QuotePro" */;
 			buildPhases = (
+				AB1264819EE9EF981CB30BEA /* [CP] Check Pods Manifest.lock */,
 				C8AD5968221DE20700236FAE /* Sources */,
 				C8AD5969221DE20700236FAE /* Frameworks */,
 				C8AD596A221DE20700236FAE /* Resources */,
+				DB59CB414F4A3E5E250A395B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +186,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AB1264819EE9EF981CB30BEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuotePro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB59CB414F4A3E5E250A395B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C8AD5968221DE20700236FAE /* Sources */ = {
@@ -320,6 +395,7 @@
 		};
 		C8AD597F221DE20800236FAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 751FA045DB825B87B1D35CB8 /* Pods-QuotePro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +414,7 @@
 		};
 		C8AD5980221DE20800236FAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED91DA712372243BCE0223B1 /* Pods-QuotePro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
