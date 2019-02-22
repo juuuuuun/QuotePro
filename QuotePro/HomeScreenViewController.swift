@@ -61,9 +61,14 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let quoteView = QuoteView(frame: view.frame)
+    quoteView.setupWithQuote(quoteManager.quotes[indexPath.row])
+    UIGraphicsBeginImageContext(quoteView.bounds.size)
+    quoteView.drawHierarchy(in: quoteView.bounds, afterScreenUpdates: true)
+    let image = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
     
-    
-    present(UIActivityViewController(activityItems: [], applicationActivities: nil), animated: true)
+    present(UIActivityViewController(activityItems: [image], applicationActivities: nil), animated: true)
   }
   
   // MARK: Navigation

@@ -21,6 +21,15 @@ class QuoteView: UIView {
   
   // MARK: Initializers
   
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    
+    guard let view = loadViewFromNib() else { return }
+    view.frame = self.bounds
+    self.addSubview(view)
+    contentView = view
+  }
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
@@ -43,6 +52,8 @@ class QuoteView: UIView {
   func setupWithQuote(_ quote: Quote) {
     quoteLabel.text = quote.quoteText
     authorLabel.text = quote.author
-    imageView.image = quote.photo?.image
+    if quote.photo != nil {
+      imageView.image = quote.photo?.image
+    }
   }
 }

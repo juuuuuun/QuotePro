@@ -17,7 +17,7 @@ class QuoteBuilderViewController: UIViewController, QuoteManagerDelegateProtocol
   // MARK: Properties
   
   @IBOutlet weak var saveButton: UIBarButtonItem!
-  @IBOutlet weak var quoteView: QuoteView!
+  var quoteView: QuoteView!
   
   var delegate: QuoteBuilderViewControllerDelegateProtocol?
   
@@ -36,6 +36,15 @@ class QuoteBuilderViewController: UIViewController, QuoteManagerDelegateProtocol
     photoManager = PhotoManager()
     photoManager.delegate = self
     
+    quoteView = QuoteView(frame: .zero)
+    quoteView.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(quoteView)
+    
+    quoteView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    quoteView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+    quoteView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    quoteView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    
     // Do any additional setup after loading the view.
     let quoteTap = UITapGestureRecognizer(target: self, action: #selector(quoteTapped))
     quoteView.quoteLabel.addGestureRecognizer(quoteTap)
@@ -49,8 +58,10 @@ class QuoteBuilderViewController: UIViewController, QuoteManagerDelegateProtocol
   func receiveRandomQuote(_ quote: Quote) {
     OperationQueue.main.addOperation {
       self.quote = quote
-      self.quoteView.quoteLabel.text = quote.quoteText
-      self.quoteView.authorLabel.text = quote.author
+      if let photo = self.photo {
+        self.quote?.photo = photo
+      }
+      self.quoteView.setupWithQuote(quote)
       self.quoteView.authorLabel.isHidden = false
       self.updateSaveButton()
     }
@@ -61,7 +72,14 @@ class QuoteBuilderViewController: UIViewController, QuoteManagerDelegateProtocol
   func receiveRandomPhoto(_ photo: Photo) {
     OperationQueue.main.addOperation {
       self.photo = photo
-      self.quoteView.imageView.image = photo.image
+      if let quote = self.quote {
+        quote.photo = photo
+        self.quoteView.setupWithQuote(quote)
+      } else {
+        let quote = Quote(quoteText: "No quote selected", author: "")
+        quote.photo = photo
+        self.quoteView.setupWithQuote(quote)
+      }
       self.updateSaveButton()
     }
   }

@@ -17,19 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="X5b-lx-dks">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUZ-FW-90p" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="4d1-BM-1xu" firstAttribute="bottom" secondItem="tUZ-FW-90p" secondAttribute="bottom" id="M2b-lF-fYg"/>
-                            <constraint firstItem="tUZ-FW-90p" firstAttribute="top" secondItem="4d1-BM-1xu" secondAttribute="top" id="Vcl-wm-MuE"/>
-                            <constraint firstItem="tUZ-FW-90p" firstAttribute="leading" secondItem="4d1-BM-1xu" secondAttribute="leading" id="YlH-bU-7YG"/>
-                            <constraint firstItem="4d1-BM-1xu" firstAttribute="trailing" secondItem="tUZ-FW-90p" secondAttribute="trailing" id="c1V-cf-QCo"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4d1-BM-1xu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Build Your Quote" id="0JF-gQ-Xy3">
@@ -45,7 +33,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="quoteView" destination="tUZ-FW-90p" id="FbS-6n-NXZ"/>
                         <outlet property="saveButton" destination="xI7-jN-Glo" id="DZA-Tf-Kei"/>
                     </connections>
                 </viewController>
